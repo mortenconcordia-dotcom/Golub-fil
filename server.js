@@ -7,7 +7,7 @@ const HOST = '0.0.0.0'; // Указываем серверу принимать 
 
 const server = http.createServer((req, res) => {
   // Serve chat.html for all routes
-  const filePath = path.join(__dirname, 'chat.html');
+  const filePath = path.join(__dirname, 'index.html');
   
   fs.readFile(filePath, (err, data) => {
     if (err) {
