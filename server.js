@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = process.env.PORT || 3000;
+const HOST = '0.0.0.0'; // Указываем серверу принимать внешние подключения
 
 const server = http.createServer((req, res) => {
   // Serve chat.html for all routes
@@ -23,6 +24,7 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`Голубь запущен на порту ${PORT}`);
+// Передаем HOST вторым параметром
+server.listen(PORT, HOST, () => {
+  console.log(`Голубь запущен на порту ${PORT} и хосте ${HOST}`);
 });
